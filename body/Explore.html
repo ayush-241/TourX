@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goibibo Cars</title>
+    <link rel="stylesheet" href="explore.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header >
+        <nav>
+            <a href="/home_page/index.html">Home</a>
+            <ul>
+                <li><a href="./trip.html">Cabs</a></li>
+                <li><a href="./hotel.html">Stay</a></li>
+                <li><a href="./Explore.html">Explore</a></li>
+                <li><a href="/home_page/index.html#contact">Contact Us</a></li>
+            </ul>
+            <span id="sign-in"><a href="./sinup.html"></a>Sign in</span>
+        </nav>
+    </header>
+    
+    <main class="animate-left">
+        <section id="try" class="animate-left" >
+    <aside id="options-bar" >
+        
+        <p><h3 style="margin: 0px 10px;">Stops</h3></p>
+
+        <p><input type="radio" name="stop" class="stop">Any stops</p>
+        <p><input type="radio" name="stop"  class="stop">Up to one stop</p>
+        <p><input type="radio" name="stop"  class="stop">Direct flights only</p>
+        <hr>
+        <p><h3>Budget</h3></p>
+        <p class="range-container" id="range-container-1">
+            <output class="range-value" id="range-value-1">₹20</output>
+            <input type="range" class="custom-range" id="custom-range-1" min="20" max="10000" value="20">
+        </p>
+        <hr>
+        <p><h3>Duration</h3></p>
+        <p class="range-container" id="range-container-2">
+            <output class="range-value" id="range-value-2">1 hours</output>
+            <input type="range" class="custom-range" id="custom-range-2" min="1" max="12" value="1">
+        </p>
+        <hr>
+        <p><h3>Type of trip</h3></p>
+        <p> <input type="radio" name="type" class="type" onclick="showDestinations('anything')">Anything</p>
+        <p> <input type="radio" name="type" class="type" onclick="showDestinations('city')">City</p>
+        <p> <input type="radio" name="type" class="type" onclick="showDestinations('beach')">Beach</p>
+        <p> <input type="radio" name="type" class="type" >Family</p>
+        <p> <input type="radio" name="type" class="type" >Romantic</p>
+        <p> <input type="radio" name="type" class="type" onclick="showDestinations('Foreign')">Foreign</p>
+        <p> <input type="radio" name="type" class="type">Foodie</p>
+        <p> <input type="radio" name="type" class="type">Skiing</p>        
+    </aside>
+
+    <div id="map" class="animate-left">
+        <!-- Your map content here -->
+        <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24072.08302120722!2d-73.97968034068639!3d40.7440715370157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2588f046ee661%3A0x5f4123497ff3f885!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1638892512323!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->
+    </div>
+</section>
+    <section id="bottom" class="animate-left">
+        <h1 id=ex_head>Explore Destinations</h1>
+        <section id="lower">
+        <section class="ex" id="city">
+            <div class="place">
+            <div class="image" id="patnaimg"></div>
+            <p class="pp">Patna ---- from ₹ 5,913</p>
+            <p class="pp">India </p>
+            </div>
+            </section>
+
+        <section class="ex" id="city">
+            <div class="place" >
+            <div class="image" id="indoreimg"></div>
+            <p class="pp">Indore ---- from ₹ 2,900</p>
+            <p class="pp">India </p>
+        </div>
+            </section>
+
+            <section class="ex" id="Foreign">
+                <div class="place">
+                <div class="image" id="newyorkimg"></div>
+                <p class="pp">Newyork ---- from ₹ 50,000</p>
+                <p class="pp">USA </p>
+            </div>
+                </section>
+    </section>
+
+    <section id="lower">
+        <section class="ex" id="beach">
+            <div class="place" >
+            <div class="image" id="vascoimg"></div>
+            <p class="pp"> Vasco da Gama ---- from ₹ 19,903</p>
+            <p class="pp">India </p>
+        </div>
+            </section>
+
+        <section class="ex" id="city">
+            <div class="place" >
+            <div class="image" id="mumbaiimg"></div>
+            <p class="pp">Mumbai ---- from ₹ 20,000</p>
+            <p class="pp">India </p>
+        </div>
+            </section>
+
+            <section class="ex" id="beach">
+                <div class="place">
+                <div class="image" id="goaimg"></div>
+                <p class="pp">Goa ---- from ₹ 12,000</p>
+                <p class="pp">India </p>
+            </div>
+                </section>
+    </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 TourX. All rights reserved.</p>
+    </footer>
+    <script>
+function updateRangeValue1() {
+const rangeInput = document.getElementById('custom-range-1');
+const rangeOutput = document.getElementById('range-value-1');
+rangeOutput.textContent = '₹' + rangeInput.value;
+}
+
+document.getElementById('custom-range-1').addEventListener('input', updateRangeValue1);
+
+updateRangeValue1();
+
+function updateRangeValue2() {
+const rangeInput = document.getElementById('custom-range-2');
+const rangeOutput = document.getElementById('range-value-2');
+rangeOutput.textContent = rangeInput.value + ' hour' + (rangeInput.value !== '1' ? 's' : '');
+}
+
+document.getElementById('custom-range-2').addEventListener('input', updateRangeValue2);
+
+updateRangeValue2();
+
+
+function showDestinations(category) {
+            const allDestinations = document.querySelectorAll('#beach');
+            allDestinations.forEach(destination => {
+                if (destination.id === category) {
+                    destination.classList.remove('hide');
+                } else {
+                    destination.classList.add('hide');
+                }
+            });
+        }
+
+        function showDestinations(category) {
+            const allDestinations = document.querySelectorAll('#city');
+            allDestinations.forEach(destination => {
+                if (destination.id === category) {
+                    destination.classList.remove('hide');
+                } else {
+                    destination.classList.add('hide');
+                }
+            });
+        }
+
+        function showDestinations(category) {
+            const allDestinations = document.querySelectorAll('#Foreign');
+            allDestinations.forEach(destination => {
+                if (destination.id === category) {
+                    destination.classList.remove('hide');
+                } else {
+                    destination.classList.add('hide');
+                }
+            });
+        }
+
+        function showDestinations(category) {
+            const allDestinations = document.querySelectorAll('.ex');
+            allDestinations.forEach(destination => {
+                if (destination.id === category) {
+                    destination.classList.remove('hide');
+                } else {
+                    destination.classList.add('hide');
+                }
+            });
+        }
+
+        window.onload = function() {
+            var elementsToAnimate = document.querySelectorAll('.animate-left');
+            elementsToAnimate.forEach(function(element) {
+                element.classList.add('animate-left');
+            });
+        };
+
+    </script>
+</body>
+</html>
